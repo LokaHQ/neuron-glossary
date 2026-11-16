@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%%TITLE%%</title>
+<meta name="description" content="%%TAGLINE%%">
+<link rel="canonical" href="%%URL%%">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Loka">
+<meta property="og:title" content="%%TITLE%%">
+<meta property="og:description" content="%%TAGLINE%%">
+<meta property="og:url" content="%%URL%%">
+<meta property="og:image" content="%%OGIMAGE%%">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="%%OGWIDTH%%">
+<meta property="og:image:height" content="%%OGHEIGHT%%">
+<meta property="og:image:alt" content="Neuron Glossary alongside the Loka wordmark drawn in ASCII">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="%%TITLE%%">
+<meta name="twitter:description" content="%%TAGLINE%%">
+<meta name="twitter:image" content="%%OGIMAGE%%">
+<meta name="twitter:image:alt" content="Neuron Glossary alongside the Loka wordmark drawn in ASCII">
+<meta name="theme-color" content="#1877f2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 31.87'%3E%3Cpath d='M16.05 19.38a3.44 3.44 0 1 0 0-6.88 3.44 3.44 0 0 0 0 6.88z' fill='%231877f2'/%3E%3Cpath fill-rule='evenodd' d='M0 15.94C0 7.13 7.16 0 16 0s16 7.13 16 15.94c0 8.8-7.16 15.94-16 15.94S0 24.74 0 15.94zm4.28-.03a11.6 11.6 0 1 0 23.2 0 11.6 11.6 0 0 0-23.2 0z' fill='%231877f2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<script>
+  // Apply the stored theme before first paint so there is no flash.
+  // Light is the default; the OS preference is intentionally ignored.
+  try {
+    if (localStorage.getItem("neuron-glossary-theme") === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  } catch (e) {}
+</script>
+<style>
+%%CSS%%
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">%%WORDMARK%%</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="scrim" id="scrim"></div>
+
+<div class="frame">
+
+  <header class="topbar">
+    <div class="brand-cell">
+      <button id="menu-toggle" class="icon-btn" type="button" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <a href="https://www.loka.com/" aria-label="Loka"><svg class="loka" viewBox="0 0 93.054802 32.0476" aria-hidden="true"><use href="#loka-wordmark"/></svg></a>
+    </div>
+
+    <a class="site-title" href="#/">Neuron Glossary</a>
+
+    <div class="topbar-right">
+      <div class="theme-switch" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-set="dark">Terminal</button>
+        <button type="button" data-theme-set="light">Light</button>
+      </div>
+      <div class="search-wrap">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search" aria-label="Search terms" autocomplete="off" spellcheck="false">
+        <kbd>/</kbd>
+        <div class="results" id="results" hidden></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="toc-label">TABLE OF CONTENTS</div>
+      <div class="theme-switch theme-switch-mobile" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-set="dark">Terminal</button>
+        <button type="button" data-theme-set="light">Light</button>
+      </div>
+      <nav class="nav" aria-label="Glossary sections">
+        <div class="nav-group" data-group="home">
+          <div class="nav-head-row">
+            <a class="nav-head" data-nav="" href="#/">Home</a>
+            <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-home" aria-label="Toggle Home pages"></button>
+          </div>
+          <ul id="nav-home">
+            <li><a data-nav="readme" href="#/readme">README</a></li>
+            %%NAV%%
+          </ul>
+        </div>
+        <div class="nav-group nav-home">
+          <a class="nav-head" data-nav="contributors" href="#/contributors">Contributors</a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <main class="content" id="main">
+        %%ARTICLES%%
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <a href="https://www.loka.com/" aria-label="Loka"><svg class="loka" viewBox="0 0 93.054802 32.0476" aria-hidden="true"><use href="#loka-wordmark"/></svg></a>
+          <span class="sep">|</span>
+          <span>Text licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></span>
+          <span class="sep">|</span>
+          <span><a href="https://github.com/LokaHQ/neuron-glossary" target="_blank" rel="noopener">Source &amp; corrections</a></span>
+          <span class="sep">|</span>
+          <a href="#/contributors">Contributors</a>
+          <span class="sep">|</span>
+          <span>Built from the <a href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/" target="_blank" rel="noopener">AWS Neuron documentation</a></span>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+
+  <p class="site-disclosure">This glossary is not endorsed by Amazon, AWS, or Annapurna Labs.</p>
+</div>
+
+<script>window.__GLOSSARY_INDEX__ = %%SEARCH%%;</script>
+<script>
+%%JS%%
+</script>
+</body>
+</html>

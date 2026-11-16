@@ -1,0 +1,16 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The Markdown files in this folder (`glossary/`), and the generated diagrams in
+`assets/diagrams/`, are licensed under the Creative Commons Attribution 4.0
+International license. You are free to share and adapt them, including
+commercially, as long as you provide attribution.
+
+Attribution: "Neuron Glossary" by Loka —
+https://github.com/LokaHQ/neuron-glossary
+
+Full license: https://creativecommons.org/licenses/by/4.0/legalcode
+
+These files are derived from the public AWS Neuron documentation
+(https://awsdocs-neuron.readthedocs-hosted.com/), which remains the property of
+Amazon Web Services. Specifications and figures quoted here are cited to that
+source; the explanatory text is original.

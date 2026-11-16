@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Neuron Glossary share card</title>
+<style>
+@font-face { font-family: Silkscreen; src: url("%%PIXELFONT%%") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; src: url("%%MONOFONT%%") format("woff2"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: #050517; }
+.card {
+  position: relative;
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  color: #edf4ff;
+  background: radial-gradient(ellipse at 78% 54%, #101d42 0, #080b22 42%, #050517 74%);
+}
+.card::before {
+  position: absolute;
+  inset: 25px;
+  content: "";
+  border: 1px solid #293663;
+  border-radius: 8px;
+}
+h1, pre { position: absolute; top: 50%; transform: translateY(-50%); margin: 0; }
+h1 { left: 69px; font: 400 84px/.98 Silkscreen, monospace; letter-spacing: -3px; }
+h1 span { display: block; }
+h1 span + span { margin-top: 5px; color: #65a9ff; }
+pre {
+  left: 598px;
+  color: #65a9ff;
+  font: 14.9px/1.02 "JetBrains Mono", monospace;
+  font-variant-ligatures: none;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1><span>Neuron</span><span>Glossary</span></h1>
+  <pre aria-hidden="true">%%ASCIIART%%</pre>
+</div>
+</body>
+</html>
