@@ -1,9 +1,12 @@
 # Neuron Glossary
 
+> This glossary is an independent community resource created and maintained by Loka.
+> It has not been reviewed or endorsed by Amazon Web Services (AWS).
+> AWS, Trainium, Inferentia, and Neuron are trademarks of Amazon.com, Inc. or its affiliates.
+> For authoritative technical information, see the [official AWS Neuron documentation](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/).
+
 A plain-language reference to AWS Trainium and Inferentia. Its 98 terms cover
 the chips, the software that runs on them, and how to diagnose performance.
-
-**This glossary is not endorsed by Amazon, AWS, or Annapurna Labs.**
 
 Read it: **https://lokahq.github.io/neuron-glossary/**
 
