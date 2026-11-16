@@ -47,6 +47,41 @@
     document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light"
   );
 
+  /* --- analytics ---------------------------------------------------------- */
+
+  var analyticsPath;
+  var lastCountedRoute;
+
+  function countVisit(route) {
+    if (!analyticsPath || route === lastCountedRoute) return;
+    lastCountedRoute = route;
+    try {
+      window.goatcounter.count({ path: analyticsPath + route });
+    } catch (error) {
+      console.warn("Could not record the GoatCounter visit", error);
+    }
+  }
+
+  function loadAnalytics() {
+    var canonical = new URL(document.querySelector('link[rel="canonical"]').href);
+    if (location.origin !== canonical.origin ||
+        (location.pathname !== canonical.pathname &&
+         location.pathname !== canonical.pathname + "index.html")) return;
+
+    var tracker = document.createElement("script");
+    tracker.src = "https://gc.zgo.at/count.js";
+    tracker.async = true;
+    tracker.dataset.goatcounter = "https://lokahq.goatcounter.com/count";
+    tracker.dataset.goatcounterSettings = '{"no_onload": true}';
+    tracker.addEventListener("load", function () {
+      if (!window.goatcounter || typeof window.goatcounter.count !== "function") return;
+      analyticsPath = canonical.pathname;
+      var active = document.querySelector("[data-route]:not([hidden])");
+      if (active) countVisit(active.dataset.route);
+    });
+    document.head.appendChild(tracker);
+  }
+
   /* --- routing ------------------------------------------------------------ */
 
   function routeFromHash() {
@@ -83,6 +118,7 @@
     document.title = route && h1 ? h1.textContent + " — " + baseTitle : baseTitle;
     revealActive(route);
     closeSidebar();
+    countVisit(route);
   }
 
   // Keep the active link visible through every collapsed parent.
@@ -278,4 +314,5 @@
   });
 
   onHashChange();
+  loadAnalytics();
 })();
